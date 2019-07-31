@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wwj.mapper.StudentMapper">
+	<resultMap id="StudentResultMap" type="com.wwj.model.Student">
+		<id column="sid" property="sid" />
+		<result column="sname" property="sname" />
+		<result column="bir" property="bir" />
+	</resultMap>
+	<delete id="deleteStudentBySid" parameterType="java.lang.Integer">
+		delete from student
+		where sid = #{sid}
+	</delete>
+	<insert id="insertStudent" parameterType="com.wwj.model.Student">
+		insert into student (sname, bir )
+		values (#{sname}, #{bir})
+	</insert>
+	<update id="updateStudent" parameterType="com.wwj.model.Student">
+		update student
+		set sname = #{sname},
+		bir = #{bir}
+		where sid = #{sid}
+	</update>
+
+	<select id="selectAll" resultMap="StudentResultMap">
+		select *
+		from student
+	</select>
+
+	<update id="tx1" parameterType="com.wwj.model.Student">
+		update student
+		set sname = #{sname},
+		bir = #{bir}
+		where sid = #{sid}
+	</update>
+	<delete id="tx2" parameterType="java.lang.Integer">
+		delete fro student
+		where sid = #{sid}
+	</delete>
+</mapper>
