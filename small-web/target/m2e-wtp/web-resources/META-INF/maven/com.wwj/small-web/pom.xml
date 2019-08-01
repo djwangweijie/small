@@ -16,6 +16,9 @@
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
 		<commons-io.version>2.4</commons-io.version>
 		<commons-codec.version>1.9</commons-codec.version>
+		<springfox-swagger2>2.7.0</springfox-swagger2>
+		<springfox-swagger-ui>2.7.0</springfox-swagger-ui>
+		<jackson-databind>2.9.0</jackson-databind>
 		<!--编译级别 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -24,7 +27,7 @@
 			<groupId>com.wwj</groupId>
 			<artifactId>small-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		 </dependency>
 		<!--单元测试 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -32,7 +35,7 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- jsp支持 -->
 		<dependency>
 			<groupId>jstl</groupId>
@@ -62,6 +65,23 @@
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
 			<version>${commons-codec.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-swagger2}</version>
+		</dependency>
+		<!--springfox-ui的jar包(里面包含了swagger的界面静态文件) -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-swagger-ui}</version>
+		</dependency>
+		<!--springfox依赖的jar包；如果你的项目中已经集成了无需重复 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind}</version>
 		</dependency>
 	</dependencies>
 </project>

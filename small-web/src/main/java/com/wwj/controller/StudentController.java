@@ -15,6 +15,12 @@ import com.wwj.model.Student;
 import com.wwj.service.StudentService;
 import com.wwj.service.TXService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 
 
 @Controller
@@ -28,6 +34,7 @@ public class StudentController {
 	
 	@RequestMapping("/select")
 	@ResponseBody
+	@ApiOperation(value="查询所有用户信息",httpMethod="POST")
 	public List<Student>  a1(){
 		List<Student> students = studentService.getAllStudent();
 		return students;
@@ -35,6 +42,7 @@ public class StudentController {
 	
 	@RequestMapping("/select1")
 	@ResponseBody
+	@ApiOperation(value="分页查询所有用户信息",httpMethod="POST") 
 	public List<Student>  a11(){
 		PageHelper.startPage(2, 3);
 		List<Student> students = studentService.getAllStudent();
@@ -44,6 +52,7 @@ public class StudentController {
 	
 	@RequestMapping("/add")
 	@ResponseBody
+	@ApiOperation(value="添加学生信息",httpMethod="POST") 
 	public Map<String,String>  a2(Student s){
 		Map<String,String> map = new HashMap<>();
 		int i = studentService.addStudent(s);
@@ -52,6 +61,7 @@ public class StudentController {
 	}
 	@RequestMapping("/update")
 	@ResponseBody
+	@ApiOperation(value="更新学生信息",httpMethod="POST") 
 	public Map<String,String> a3(Student s){
 		Map<String,String> map = new HashMap<>();
 		int i= studentService.modifStudent(s);
@@ -60,7 +70,8 @@ public class StudentController {
 	}
 	@RequestMapping("/delete")
 	@ResponseBody
-	public Map<String,String>  a4(int sid){
+	@ApiOperation(value="删除学生信息",httpMethod="POST") 
+	public Map<String,String>  a4(@ApiParam(name = "sid", value = "学生编号", required = true)int sid){
 		Map<String,String> map = new HashMap<>();
 		int i  = studentService.removeStudentBySid(sid);
 		map.put("code", "200");
@@ -68,6 +79,7 @@ public class StudentController {
 	}
 	
 	@RequestMapping("/tx")
+	@ApiOperation(value="事务测试",httpMethod="POST") 
 	public void  a4(){
 			txService.Aservice();
 	}

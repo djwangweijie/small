@@ -15,7 +15,7 @@ public class TXserviceImpl  implements  TXService{
 	@Autowired
 	private  StudentMapper studentMapper;
 	
-	@Autowired
+	@Autowired(required=false)
 	private   TXService   txService;
 	@Override
 	@Transactional

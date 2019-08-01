@@ -35,7 +35,10 @@
 
     <!--启用该标签代表 spring mvc 不拦截css、js、jpg等相关的静态资源-->
     <mvc:default-servlet-handler/>
-
+     <bean class="com.wwj.swagger.SwaggerConfig"/>
+    <mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
+    <mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
     <!-- 启用spring mvc 注解 -->
     <mvc:annotation-driven></mvc:annotation-driven>
+
 </beans>
