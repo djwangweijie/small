@@ -28,5 +28,10 @@
 		<a href="select">查找</a>
 		<a href="select1">分页查找</a>
 		<a href="tx">事务</a>
+		<p>以下内容是关于redis操作</p>
+		<a href="selectRedis1">查找(数据一致性不高)</a>
+		<a href="selectRedis2">查找无参(数据一致性高)</a>
+		<a href="selectRedis3">查找有参(数据一致性高)</a>
+		<a href="insertRedis1">插入数据更改缓存</a>
 </body>
 </html>
