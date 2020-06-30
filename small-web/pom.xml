@@ -18,7 +18,7 @@
 		<commons-codec.version>1.9</commons-codec.version>
 		<springfox-swagger2>2.7.0</springfox-swagger2>
 		<springfox-swagger-ui>2.7.0</springfox-swagger-ui>
-		<jackson-databind>2.9.0</jackson-databind>
+		<jackson-databind>2.9.10.5</jackson-databind>
 		<!--编译级别 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
